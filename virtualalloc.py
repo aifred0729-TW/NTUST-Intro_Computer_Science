@@ -43,6 +43,6 @@ def main():
 
     r.sendline(payload)
     print("[+] Send Payload !")
-    print("[+] Target crashed, reverse shell shall be back ;)")
+    print("[+] Target crashed, reverse shell should be back ;)")
 
 main()
